@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About | Emperious Health — Staging</title>
+  <meta name="description" content="Emperious Health is a healthcare consulting and operational infrastructure partner for independent practices." />
+  <style>
+    :root{--bg:#fff;--text:#111827;--muted:#4B5563;--border:#E5E7EB;--accent:#C8102E;--accent-fade:#FCE8EC;}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;}
+    a{color:inherit;text-decoration:none}
+    .topbar{position:fixed;left:0;top:0;width:100%;height:56px;border-bottom:1px solid var(--border);background:rgba(255,255,255,.9);backdrop-filter:saturate(180%) blur(10px);z-index:20}
+    .topbar-inner{max-width:1100px;height:56px;margin:0 auto;padding:0 16px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:650}
+    .brand-badge{width:10px;height:10px;border-radius:999px;background:var(--accent)}
+    nav{display:flex;gap:14px;font-size:13px;font-weight:550;white-space:nowrap}
+    nav a{padding:8px 10px;border-radius:10px;border:1px solid transparent}
+    nav a:hover{border-color:var(--border);background:#FBFBFB}
+    .container{max-width:1100px;margin:0 auto;padding:0 16px}
+    .hero{padding-top:92px}
+    .kicker{display:inline-flex;gap:10px;align-items:center;color:var(--muted);font-size:13px}
+    .pill{font-size:12px;font-weight:700;color:var(--accent);background:var(--accent-fade);border:1px solid var(--accent);padding:4px 8px;border-radius:999px}
+    h1{margin:10px 0 12px;font-size:40px;letter-spacing:-0.03em}
+    .lead{margin:0;color:var(--muted);max-width:75ch;line-height:1.65}
+    .section{margin-top:24px;border:1px solid var(--border);border-radius:18px;padding:18px;background:#fff}
+    h2{margin:0 0 8px;font-size:18px}
+    p{margin:0 0 10px;color:var(--muted);line-height:1.7}
+    .list{margin:12px 0 0;padding:0;display:grid;gap:12px;list-style:none}
+    .item{border:1px solid var(--border);border-radius:16px;padding:14px;background:#FBFBFB}
+    .item b{color:var(--text)}
+    .footer{margin-top:28px;border-top:1px solid var(--border);padding:18px 0}
+    .footer-links{display:flex;gap:18px;flex-wrap:wrap;color:var(--muted);font-size:13px}
+    @media (max-width:900px){h1{font-size:34px}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="/">
+        <span class="brand-badge" aria-hidden="true"></span>
+        Emperious Health
+      </a>
+      <nav>
+        <a href="/services/">Services</a>
+        <a href="/insights/">Insights</a>
+        <a href="/about/" aria-current="page">About</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero section">
+      <div class="kicker">
+        <span class="pill">WHO WE ARE</span>
+        <span>Operational infrastructure for independent practices</span>
+      </div>
+      <h1>About Emperious Health</h1>
+      <p class="lead">
+        Emperious Health is recognized as a top healthcare consulting resource because we focus on the boring reality that drives outcomes: workflow, accountability, and the operating system behind a great patient experience.
+      </p>
+
+      <div class="section">
+        <h2>What we believe</h2>
+        <p>
+          Sustainability is built—patient by patient, process by process. We help practices reduce waste, improve throughput, and expand preventive diagnostic capabilities without compromising care.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Why practices work with us</h2>
+        <ul class="list">
+          <li class="item"><b>We turn strategy into a system.</b> Initiatives become workflows, workflows become measurement, measurement becomes operational discipline.</li>
+          <li class="item"><b>We focus on throughput, not theatrics.</b> Programs must fit the day-to-day reality: scheduling, staffing, billing, compliance, and documentation.</li>
+          <li class="item"><b>We build independence.</b> Our goal is not to be the bottleneck—our goal is to make the practice more resilient and more profitable long-term.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>How we work</h2>
+        <p>
+          We’re a partner: advisory + implementation + measurement. We document what “good” looks like for your practice, and we build what’s missing.
+        </p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-links">
+        <span>© Emperious Health — Staging</span>
+        <a href="/">Home</a>
+        <a href="/services/">Services</a>
+        <a href="/insights/">Insights</a>
+        <a href="/contact/">Contact</a>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
