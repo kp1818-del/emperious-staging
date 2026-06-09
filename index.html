@@ -6,11 +6,13 @@
   <title>Emperious Health — Staging</title>
   <style>
     :root{--bg:#ffffff;--text:#111827;--muted:#4B5563;--border:#E5E7EB;--card:#F8FAFC;--accent:#C8102E;}
-    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;}
     a{color:inherit}
     .topbar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
     .topbar-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:12px 16px}
-    .brand{font-weight:800;letter-spacing:.4px}
+    .brand{font-weight:800;letter-spacing:.4px;display:inline-flex;align-items:center;gap:10px}
+    .brand::before{content:"";display:inline-block;width:110px;height:28px;background:url('https://emperioushealth.com/wp-content/uploads/2025/02/emperious-health-logo-320-1.png') no-repeat center/contain}
     .nav a{margin-left:16px;text-decoration:none;color:var(--muted);font-weight:600;font-size:14px}
     .nav a:hover{color:var(--text)}
     .btn{border:1px solid var(--accent);padding:10px 14px;border-radius:10px;font-weight:700;cursor:pointer}
@@ -69,7 +71,7 @@
         <div class="grid">
           <div class="card">Services built from Emperious positioning and HG-style section structure.</div>
           <div class="card">Insights built as high-signal cards with category tags and summaries.</div>
-          <div class="card">About rewritten from Emperious' fundamentals page copy.</div>
+          <div class="card">About rewritten from Emperious fundamentals.</div>
           <div class="card">Contact delivered as form-only for now (no phone/email/address embedded).</div>
           <div class="card">Nav consistent across pages for a real, multi-page staging experience.</div>
           <div class="card">Ready for KEEP/REMOVE/REWRITE content pipeline and eventual cutover.</div>
