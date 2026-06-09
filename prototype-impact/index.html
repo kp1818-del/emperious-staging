@@ -22,9 +22,13 @@ nav a:hover,nav a:focus{border-bottom-color:var(--accent);}
 .hero h1{font-size:34px;margin:12px 0 10px;line-height:1.1;}
 .hero p{color:var(--muted);max-width:68ch;margin:0 0 16px;}
 .blades{padding:28px 0;border-bottom:1px solid var(--border);}
-.blades .impact{display:grid;grid-template-columns:0.95fr 1.05fr;gap:18px;align-items:start;}
-.blades .big-number{margin:0;font-size:70px;color:var(--accent);line-height:1;}
-.blades .blades-sub{margin:10px 0 0;color:var(--muted);font-size:13px;max-width:64ch;}
+.blades .impact{display:grid;grid-template-columns:1.25fr .75fr;gap:18px;align-items:start;}
+.impact-left{position:relative;border-radius:18px;border:1px solid var(--border);background:linear-gradient(135deg,#fff4f6,#eef3ff);box-shadow:0 18px 50px rgba(17,24,39,.07);padding:20px;overflow:hidden;}
+.impact-left::after{content:"";position:absolute;right:-60px;top:-70px;width:220px;height:220px;background:radial-gradient(circle at 30% 30%, rgba(200,16,46,.55), rgba(200,16,46,0));}
+.big-number{margin:0;font-size:74px;color:var(--accent);line-height:1;}
+.blades-sub{margin:12px 0 0;color:var(--muted);font-size:13px;max-width:56ch;}
+.proof{margin:12px 0 0;padding-left:18px;color:var(--muted);font-size:13px;line-height:1.7;}
+.proof li{margin:4px 0;}
 .blade-grid{border-left:1px solid var(--border);padding-left:18px;display:flex;flex-direction:column;gap:14px;}
 .blade{border:1px solid var(--border);border-radius:14px;padding:16px;background:#fff;transform:translateY(12px);opacity:0;transition:transform .7s ease,opacity .7s ease;}
 .blade.visible{transform:translateY(0);opacity:1;}
@@ -41,7 +45,7 @@ nav a:hover,nav a:focus{border-bottom-color:var(--accent);}
 .metric-value{font-size:30px;font-weight:750;letter-spacing:.2px;margin:0 0 8px;}
 .metric-label{margin:0;color:var(--muted);font-size:13px;line-height:1.5;}
 footer{border-top:1px solid var(--border);padding:16px 0;color:var(--muted);font-size:12px;}
-@media (max-width:900px){
+@media(max-width:900px){
   .flex{flex-direction:column;align-items:flex-start;}
   nav{flex-wrap:wrap}
   .blades .impact{grid-template-columns:1fr;}
@@ -76,28 +80,30 @@ footer{border-top:1px solid var(--border);padding:16px 0;color:var(--muted);font
 
   <section class="blades" aria-label="Overwhelmed doctors impact">
     <div class="shell impact">
-      <div>
+      <div class="impact-left">
         <h2 class="big-number">81%</h2>
         <p class="blades-sub">Doctors report being overwhelmed by patient demand and operational load. Emperious starts with throughput + staffing constraints—so programs can run sustainably.</p>
+        <ul class="proof">
+          <li>Remove chaos: stabilize staffing and handoffs.</li>
+          <li>Build consistency: standard work + clean execution.</li>
+          <li>Make growth repeatable: operational discipline first.</li>
+        </ul>
       </div>
-
       <div class="blade-grid">
         <article class="blade" data-idx="0">
           <div class="blade-badge">01 Fighting burnout</div>
           <h3>Operational load is the real enemy</h3>
-          <p>We stabilize staffing, simplify workflows, and remove low-value busywork so practices regain capacity.</p>
+          <p>We simplify workflows and remove low-value busywork so practices regain capacity.</p>
         </article>
-
         <article class="blade" data-idx="1">
           <div class="blade-badge">02 Patient demand</div>
           <h3>Capacity is earned through process</h3>
-          <p>We design preventive and diagnostic workflows that can run consistently, even when patient volumes spike.</p>
+          <p>Preventive and diagnostic workflows are designed to run consistently—even when volumes spike.</p>
         </article>
-
         <article class="blade" data-idx="2">
           <div class="blade-badge">03 Struggling to grow</div>
           <h3>Growth follows operational discipline</h3>
-          <p>We build growth on reliability: standard work, clear handoffs, and measurable throughput improvements.</p>
+          <p>Standard work and measurable throughput improvements make scale sustainable.</p>
         </article>
       </div>
     </div>
@@ -107,7 +113,6 @@ footer{border-top:1px solid var(--border);padding:16px 0;color:var(--muted);font
     <div class="shell">
       <h2>Operational impact (metrics)</h2>
       <p class="metrics-sub">Emperious internal benchmarks*</p>
-
       <div class="metric-grid">
         <div class="metric" data-idx="0">
           <div class="metric-value" data-target="2500" data-unit="+">0</div>
@@ -122,7 +127,6 @@ footer{border-top:1px solid var(--border);padding:16px 0;color:var(--muted);font
           <div class="metric-label">Abnormal finding ratio</div>
         </div>
       </div>
-
       <footer>*Timeframe can be added once finalized.</footer>
     </div>
   </section>
@@ -130,31 +134,31 @@ footer{border-top:1px solid var(--border);padding:16px 0;color:var(--muted);font
 
 <script>
 (function(){
-  const revealables = document.querySelectorAll('.blade, .metric');
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      const el = entry.target;
-      el.style.transitionDelay = (parseInt(el.dataset.idx || "0", 10) * 60) + 'ms';
+  const revealables=document.querySelectorAll('.blade,.metric');
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(!entry.isIntersecting)return;
+      const el=entry.target;
+      el.style.transitionDelay=((parseInt(el.dataset.idx||"0",10)*60))+'ms';
       el.classList.add('visible');
-      if (el.classList.contains('metric')) {
-        const numEl = el.querySelector('.metric-value');
-        const target = parseInt(numEl.dataset.target, 10);
-        const unit = numEl.dataset.unit || '';
-        let current = 0;
-        const tick = () => {
-          const step = Math.max(1, Math.floor((target - current) / 40));
-          current += step;
-          if (current >= target) current = target;
-          numEl.textContent = current.toLocaleString() + unit;
-          if (current < target) requestAnimationFrame(tick);
+      if(el.classList.contains('metric')){
+        const numEl=el.querySelector('.metric-value');
+        const target=parseInt(numEl.dataset.target,10);
+        const unit=numEl.dataset.unit||'';
+        let current=0;
+        const tick=()=>{
+          const step=Math.max(1,Math.floor((target-current)/45));
+          current+=step;
+          if(current>=target)current=target;
+          numEl.textContent=current.toLocaleString()+unit;
+          if(current<target)requestAnimationFrame(tick);
         };
         tick();
       }
       obs.unobserve(el);
     });
-  }, {threshold: 0.15});
-  revealables.forEach(el => obs.observe(el));
+  },{threshold:0.15});
+  revealables.forEach(el=>obs.observe(el));
 })();
 </script>
 </body>
