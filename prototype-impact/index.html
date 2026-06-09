@@ -7,50 +7,46 @@
 <style>
 :root{--accent:#C8102E;--text:#111827;--muted:#4B5563;--border:#E5E7EB;--bg:#FFFFFF;}
 *{box-sizing:border-box}
-body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:var(--bg)}
-a{color:inherit;text-decoration:none}
-.topbar{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
-.shell{max-width:1080px;margin:0 auto;padding:14px 18px}
-.flex{display:flex;align-items:center;gap:18px;justify-content:space-between}
-.brand{display:inline-flex;align-items:center;gap:10px}
-.brand::before{content:"";display:inline-block;width:220px;height:56px;background:url('https://emperioushealth.com/wp-content/uploads/2025/02/emperious-health-logo-320-1.png') no-repeat center/contain}
-.brand span{display:none}
-.nav{display:flex;gap:14px;font-size:13px}
-.nav a{color:#374151;padding:8px 0;border-bottom:2px solid transparent}
-.nav a:hover,.nav a:focus{border-bottom-color:var(--accent)}
-.hero{padding:52px 0 28px;border-bottom:1px solid var(--border)}
-.hero h1{font-size:34px;margin:12px 0 10px;line-height:1.1}
-.hero p{color:var(--muted);max-width:68ch;margin:0 0 16px}
-
-/* two-column impact section */
-.blades{padding:28px 0;border-bottom:1px solid var(--border)}
-.blades .shell{display:grid;grid-template-columns:0.9fr 1.1fr;gap:18px;align-items:start}
-.big-number{margin:0;font-size:70px;color:var(--accent);line-height:1}
-.blades-sub{margin:10px 0 0;color:var(--muted);font-size:13px;max-width:72ch}
-.blade-grid{grid-column:2;border-left:1px solid var(--border);padding-left:18px;display:flex;flex-direction:column;gap:12px}
-.blade{border:1px solid var(--border);border-radius:14px;padding:16px;background:#fff;transform:translateY(12px);opacity:0;transition:transform .85s ease,opacity .85s ease}
-.blade.visible{transform:translateY(0);opacity:1}
-.blade-badge{display:inline-flex;align-items:center;gap:10px;color:var(--muted);font-weight:650;font-size:13px}
-.blade-badge::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--accent);opacity:.35}
-.blade h3{margin:10px 0 10px;font-size:18px}
-.blade p{margin:0;color:var(--muted);font-size:13px;line-height:1.6}
-
-.metrics{padding:28px 0 60px}
-.metrics h2{margin:0;font-size:18px}
-.metrics-sub{margin:8px 0 0;color:var(--muted);font-size:13px}
-.metric-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:16px}
-.metric{border:1px solid var(--border);border-radius:14px;padding:16px 16px 14px;background:#fff;transform:translateY(14px);opacity:0;transition:transform .85s ease,opacity .85s ease}
-.metric.visible{transform:translateY(0);opacity:1}
-.metric-value{font-size:30px;font-weight:750;letter-spacing:.2px;margin:0 0 8px}
-.metric-label{margin:0;color:var(--muted);font-size:13px;line-height:1.5}
-
-footer{border-top:1px solid var(--border);padding:16px 0;color:var(--muted);font-size:12px}
-
+body{margin:0;font-family: ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:var(--bg);}
+a{color:inherit;text-decoration:none;}
+.topbar{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);}
+.shell{max-width:1080px;margin:0 auto;padding:14px 18px;}
+.flex{display:flex;align-items:center;gap:18px;justify-content:space-between;}
+.brand{display:inline-flex;align-items:center;gap:10px;}
+.brand::before{content:"";display:inline-block;width:220px;height:56px;background:url('https://emperioushealth.com/wp-content/uploads/2025/02/emperious-health-logo-320-1.png') no-repeat center/contain;}
+.brand span{display:none;}
+nav{display:flex;gap:14px;font-size:13px;}
+nav a{color:#374151;padding:8px 0;border-bottom:2px solid transparent;}
+nav a:hover,nav a:focus{border-bottom-color:var(--accent);}
+.hero{padding:52px 0 28px;border-bottom:1px solid var(--border);}
+.hero h1{font-size:34px;margin:12px 0 10px;line-height:1.1;}
+.hero p{color:var(--muted);max-width:68ch;margin:0 0 16px;}
+.blades{padding:28px 0;border-bottom:1px solid var(--border);}
+.blades .impact{display:grid;grid-template-columns:0.95fr 1.05fr;gap:18px;align-items:start;}
+.blades .big-number{margin:0;font-size:70px;color:var(--accent);line-height:1;}
+.blades .blades-sub{margin:10px 0 0;color:var(--muted);font-size:13px;max-width:64ch;}
+.blade-grid{border-left:1px solid var(--border);padding-left:18px;display:flex;flex-direction:column;gap:14px;}
+.blade{border:1px solid var(--border);border-radius:14px;padding:16px;background:#fff;transform:translateY(12px);opacity:0;transition:transform .7s ease,opacity .7s ease;}
+.blade.visible{transform:translateY(0);opacity:1;}
+.blade-badge{display:inline-flex;align-items:center;gap:10px;color:var(--muted);font-weight:650;font-size:13px;}
+.blade-badge::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--accent);opacity:.35;}
+.blade h3{margin:10px 0 10px;font-size:18px;}
+.blade p{margin:0;color:var(--muted);font-size:13px;line-height:1.6;}
+.metrics{padding:28px 0 60px;}
+.metrics h2{margin:0;font-size:18px;}
+.metrics-sub{margin:8px 0 0;color:var(--muted);font-size:13px;}
+.metric-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:16px;}
+.metric{border:1px solid var(--border);border-radius:14px;padding:16px;background:#fff;transform:translateY(12px);opacity:0;transition:transform .7s ease,opacity .7s ease;}
+.metric.visible{transform:translateY(0);opacity:1;}
+.metric-value{font-size:30px;font-weight:750;letter-spacing:.2px;margin:0 0 8px;}
+.metric-label{margin:0;color:var(--muted);font-size:13px;line-height:1.5;}
+footer{border-top:1px solid var(--border);padding:16px 0;color:var(--muted);font-size:12px;}
 @media (max-width:900px){
-  .flex{flex-direction:column;align-items:flex-start}
-  .blades .shell{grid-template-columns:1fr;border-top:none}
-  .blade-grid{grid-column:1;border-left:none;padding-left:0}
-  .metric-grid{grid-template-columns:1fr}
+  .flex{flex-direction:column;align-items:flex-start;}
+  nav{flex-wrap:wrap}
+  .blades .impact{grid-template-columns:1fr;}
+  .blade-grid{border-left:none;padding-left:0;}
+  .metric-grid{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -59,7 +55,7 @@ footer{border-top:1px solid var(--border);padding:16px 0;color:var(--muted);font
   <div class="shell">
     <div class="flex">
       <a href="/" class="brand"><span>Emperious Health</span></a>
-      <nav class="nav" aria-label="Prototype nav">
+      <nav>
         <a href="/">Home</a>
         <a href="/services/">Services</a>
         <a href="/insights/">Insights</a>
@@ -73,33 +69,35 @@ footer{border-top:1px solid var(--border);padding:16px 0;color:var(--muted);font
 <main>
   <section class="hero">
     <div class="shell">
-      <h1>Prototype: Impact dashboard</h1>
-      <p>Layout approval: attention + animation (HG-inspired structure), rewritten for Emperious.</p>
+      <h1>Prototype: impact section</h1>
+      <p>We’re only testing layout and animation here—once you approve the arrangement, we’ll port it into the main site.</p>
     </div>
   </section>
 
-  <section class="blades" aria-label="Doctors overwhelmed section">
-    <div class="shell">
+  <section class="blades" aria-label="Overwhelmed doctors impact">
+    <div class="shell impact">
       <div>
         <h2 class="big-number">81%</h2>
-        <p class="blades-sub">of doctors are overwhelmed. Emperious focuses on the operating model first: throughput and staffing.</p>
+        <p class="blades-sub">Doctors report being overwhelmed by patient demand and operational load. Emperious starts with throughput + staffing constraints—so programs can run sustainably.</p>
       </div>
 
       <div class="blade-grid">
         <article class="blade" data-idx="0">
-          <div class="blade-badge">01</div>
-          <h3>Fighting burnout</h3>
-          <p>Reduce decision fatigue by standardizing workflows. Stability is the foundation of sustainable growth.</p>
+          <div class="blade-badge">01 Fighting burnout</div>
+          <h3>Operational load is the real enemy</h3>
+          <p>We stabilize staffing, simplify workflows, and remove low-value busywork so practices regain capacity.</p>
         </article>
+
         <article class="blade" data-idx="1">
-          <div class="blade-badge">02</div>
-          <h3>Patient demand</h3>
-          <p>Handle volume with predictable execution—so capacity is controlled instead of chaotic.</p>
+          <div class="blade-badge">02 Patient demand</div>
+          <h3>Capacity is earned through process</h3>
+          <p>We design preventive and diagnostic workflows that can run consistently, even when patient volumes spike.</p>
         </article>
+
         <article class="blade" data-idx="2">
-          <div class="blade-badge">03</div>
-          <h3>Struggling to grow</h3>
-          <p>Start with operations. Then scale preventive + ancillary workflows with a measurable weekly rhythm.</p>
+          <div class="blade-badge">03 Struggling to grow</div>
+          <h3>Growth follows operational discipline</h3>
+          <p>We build growth on reliability: standard work, clear handoffs, and measurable throughput improvements.</p>
         </article>
       </div>
     </div>
@@ -107,73 +105,57 @@ footer{border-top:1px solid var(--border);padding:16px 0;color:var(--muted);font
 
   <section class="metrics" aria-label="Emperious impact metrics">
     <div class="shell">
-      <h2>Operational impact</h2>
-      <p class="metrics-sub">Emperious impact dashboard*</p>
+      <h2>Operational impact (metrics)</h2>
+      <p class="metrics-sub">Emperious internal benchmarks*</p>
 
       <div class="metric-grid">
         <div class="metric" data-idx="0">
-          <div class="metric-value" data-target="2500" data-suffix="+">0</div>
+          <div class="metric-value" data-target="2500" data-unit="+">0</div>
           <div class="metric-label">Critical findings elevated to action</div>
         </div>
         <div class="metric" data-idx="1">
-          <div class="metric-value" data-target="10000" data-suffix="+">0</div>
+          <div class="metric-value" data-target="10000" data-unit="+">0</div>
           <div class="metric-label">Patients screened through preventive workflows</div>
         </div>
         <div class="metric" data-idx="2">
-          <div class="metric-value" data-target="35" data-suffix="%">0</div>
+          <div class="metric-value" data-target="35" data-unit="%">0</div>
           <div class="metric-label">Abnormal finding ratio</div>
         </div>
       </div>
 
-      <p class="metrics-sub" style="margin-top:10px">*Swap in time-bounded verified metrics when ready.</p>
+      <footer>*Timeframe can be added once finalized.</footer>
     </div>
   </section>
 </main>
 
-<footer>
-  <div class="shell">Prototype page for internal approval only.</div>
-</footer>
-
 <script>
-const observer = new IntersectionObserver((entries)=>{
-  entries.forEach(entry=>{
-    if(!entry.isIntersecting) return;
-    const el = entry.target;
-    const idx = parseInt(el.dataset.idx || 0,10);
-    el.style.transitionDelay = `${idx*0.08}s`;
-    el.classList.add('visible');
-    observer.unobserve(el);
-  });
-},{threshold:0.2});
-
-const blades = document.querySelectorAll('.blade');
-const metrics = document.querySelectorAll('.metric');
-blades.forEach(el=>observer.observe(el));
-metrics.forEach(el=>observer.observe(el));
-
-const counters = document.querySelectorAll('.metric-value');
-const countObs = new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(!entry.isIntersecting) return;
-    const el = entry.target;
-    if(el.dataset.started) return;
-    el.dataset.started = 'true';
-    const target = parseInt(el.dataset.target,10);
-    const suffix = el.dataset.suffix || '';
-    let current = 0;
-
-    const tick = ()=>{
-      const step = Math.max(1, Math.floor((target - current)/45));
-      current += step;
-      if(current >= target) current = target;
-      el.textContent = `${current.toLocaleString()}${suffix}`;
-      if(current < target) requestAnimationFrame(tick);
-    };
-    tick();
-    countObs.unobserve(el);
-  });
-},{threshold:0.4});
-counters.forEach(el=>countObs.observe(el));
+(function(){
+  const revealables = document.querySelectorAll('.blade, .metric');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      el.style.transitionDelay = (parseInt(el.dataset.idx || "0", 10) * 60) + 'ms';
+      el.classList.add('visible');
+      if (el.classList.contains('metric')) {
+        const numEl = el.querySelector('.metric-value');
+        const target = parseInt(numEl.dataset.target, 10);
+        const unit = numEl.dataset.unit || '';
+        let current = 0;
+        const tick = () => {
+          const step = Math.max(1, Math.floor((target - current) / 40));
+          current += step;
+          if (current >= target) current = target;
+          numEl.textContent = current.toLocaleString() + unit;
+          if (current < target) requestAnimationFrame(tick);
+        };
+        tick();
+      }
+      obs.unobserve(el);
+    });
+  }, {threshold: 0.15});
+  revealables.forEach(el => obs.observe(el));
+})();
 </script>
 </body>
 </html>
