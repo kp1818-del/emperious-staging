@@ -5,46 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Services | Emperious Health — Staging</title>
   <style>
-    :root{
-      --accent:#C8102E;
-      --text:#111827;
-      --muted:#4B5563;
-      --border:#E5E7EB;
-      --bg:#ffffff;
-    }
+    :root{--accent:#C8102E;--text:#111827;--muted:#4B5563;--border:#E5E7EB;--bg:#ffffff;}
     *{box-sizing:border-box;}
-    html,body{margin:0;padding:0;font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;background:var(--bg);color:var(--text);}
+    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;color:var(--text);}
     a{color:inherit;text-decoration:none;}
     .topbar{position:fixed;top:0;left:0;right:0;z-index:10;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);}
     .container{max-width:1120px;margin:0 auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
-    .brand{font-weight:800;letter-spacing:.2px;display:flex;align-items:center;gap:10px;}
+    .brand{font-weight:900;display:flex;align-items:center;gap:10px;}
     .brand-badge{width:10px;height:10px;background:var(--accent);border-radius:2px;}
-    .nav{display:flex;gap:14px;flex-wrap:wrap;}
-    .nav a{padding:8px 10px;border-radius:8px;border:1px solid transparent;color:var(--muted);font-weight:650;}
-    .nav a:hover{border-color:var(--border);color:var(--text);} 
-    .nav a.active{border-color:rgba(200,16,46,.2);background:rgba(200,16,46,.06);color:var(--text);}    
+    nav{display:flex;gap:14px;flex-wrap:wrap;}
+    nav a{padding:8px 10px;border-radius:8px;border:1px solid transparent;color:var(--muted);font-weight:650;}
+    nav a:hover{border-color:var(--border);color:var(--text);}
+    nav a.active{border-color:rgba(200,16,46,.2);background:rgba(200,16,46,.06);color:var(--text);}
     .hero{margin-top:64px;position:relative;overflow:hidden;border-bottom:1px solid var(--border);}
     .hero video{width:100%;height:420px;object-fit:cover;display:block;filter:brightness(.85);}
-    .hero .overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.0),rgba(255,255,255,.8),rgba(255,255,255,1));}
-    .hero .content{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;gap:14px;padding:0 20px 22px 20px;max-width:1120px;margin:0 auto;}  
+    .overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,0),rgba(255,255,255,.85),rgba(255,255,255,1));}
+    .hero-content{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;gap:14px;padding:0 20px 22px 20px;max-width:1120px;margin:0 auto;}
     .kicker{font-weight:800;color:var(--accent);text-transform:uppercase;letter-spacing:.12em;font-size:12px;}
     .hero h1{margin:0;font-size:44px;line-height:1.05;}
     .hero p{margin:0;font-size:17px;line-height:1.55;color:var(--muted);max-width:72ch;}
-    .grid{max-width:1120px;margin:0 auto;padding:28px 20px 60px;display:grid;grid-template-columns:repeat(12,1fr);gap:16px;}
-    .card{grid-column:span 6; border:1px solid var(--border);border-radius:16px;padding:18px;box-shadow:0 10px 40px rgba(15,23,42,.06);display:flex;flex-direction:column;gap:10px;}
-    .card .tag{font-weight:900;color:var(--accent);}
-    .card h2{margin:0;font-size:20px;line-height:1.3;}
-    .card p{margin:0;color:var(--muted);line-height:1.65;}
-    ul{margin:0 0 0 18px;padding:0;color:var(--muted);line-height:1.7;}
-    .section-full{grid-column:span 12;border:1px solid var(--border);border-radius:16px;padding:18px;background:#fff;display:flex;flex-direction:column;gap:12px;}
-    .lead{font-size:18px;line-height:1.65;color:var(--muted);margin:0;}
-    .footer{border-top:1px solid var(--border);padding:18px 20px;color:var(--muted);} 
-    .hidden{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease;}
-    .visible{opacity:1;transform:translateY(0);}
-    @media (max-width: 900px){
-      .card{grid-column:span 12;}
-      .hero h1{font-size:34px;}
-    }
+    .actions{display:flex;gap:12px;flex-wrap:wrap;}
+    .btn{border-radius:12px;border:1px solid var(--border);padding:10px 14px;font-weight:800;cursor:pointer;background:#fff;color:var(--text);}
+    .btn-primary{background:var(--accent);border-color:var(--accent);color:#fff;}
+    .grid{max-width:1120px;margin:0 auto;padding:28px 20px;display:grid;grid-template-columns:repeat(12,1fr);gap:16px;}
+    .bucket{grid-column:span 6;border:1px solid var(--border);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:10px;box-shadow:0 10px 40px rgba(15,23,42,.05);}
+    .bucket .label{font-weight:900;color:var(--accent);}
+    .bucket p{margin:0;color:var(--muted);line-height:1.7;}
+    .section{grid-column:span 12;border:1px solid var(--border);border-radius:16px;padding:20px;background:#fff;}
+    .section h2{margin-top:0;}
+    ul{margin:12px 0 0 18px;color:var(--muted);line-height:1.75;}
+    .cta{grid-column:span 12;border:1px solid var(--border);border-radius:16px;padding:20px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;background:#fff;}
+    footer{border-top:1px solid var(--border);padding:24px 20px 40px;color:var(--muted);font-size:14px;}
+    footer a{color:var(--muted);}
+    .reveal{opacity:0;transform:translateY(14px);transition:opacity .45s ease, transform .45s ease;}
+    .reveal.visible{opacity:1;transform:translateY(0);}
+    @media (max-width:860px){.hero h1{font-size:34px;}.hero video{height:320px;}.bucket{grid-column:span 12;}.cta{flex-direction:column;align-items:flex-start;}}
   </style>
 </head>
 <body>
@@ -54,7 +49,7 @@
         <span class="brand-badge"></span>
         <span>Emperious Health</span>
       </a>
-      <nav class="nav" aria-label="Primary">
+      <nav>
         <a href="/" >Home</a>
         <a href="/services/" class="active">Services</a>
         <a href="/insights/">Insights</a>
@@ -64,124 +59,123 @@
     </div>
   </header>
 
-  <section class="hero" aria-label="Services hero">
+  <section class="hero">
     <video autoplay muted loop playsinline>
       <source src="https://storage.coverr.co/videos/coverr-technological-background-3988/1080p.mp4" type="video/mp4" />
     </video>
     <div class="overlay"></div>
-    <div class="content">
+    <div class="hero-content">
       <div class="kicker">Services</div>
-      <h1>Tools, insight, and execution that improves operations</h1>
-      <p>Our services are designed for independent medical practices and outpatient clinics that want healthier margins, fewer bottlenecks, and better patient experiences.</p>
+      <h1>Start with a clear front door.</h1>
+      <p>Choose the operating bucket that matches your constraint today. Each bucket connects you into detail sections you can scan without losing the big picture.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#efficiency">Operational Efficiency</a>
+        <a class="btn" href="#preventive">Preventive Diagnostics</a>
+        <a class="btn" href="#revenue">Revenue Optimization</a>
+        <a class="btn" href="#ai">AI + Decision Support</a>
+      </div>
     </div>
   </section>
 
-  <main class="grid" aria-label="Services content">
-    <article class="section-full hidden">
-      <h2 style="margin:0">Trust, clarity, and sustainable progress</h2>
-      <p class="lead">Emperious Health equips your organization with the tools and insights needed to thrive amidst transformation and achieve sustainable progress.</p>
-    </article>
+  <main class="grid">
+    <div class="bucket reveal">
+      <div class="label">Bucket 01</div>
+      <h2>Operational Efficiency</h2>
+      <p>Your #1: throughput + staffing. We diagnose workflow friction, standardize the operating model, and stabilize staffing capacity.</p>
+      <a class="btn" href="#efficiency">Open</a>
+    </div>
+    <div class="bucket reveal">
+      <div class="label">Bucket 02</div>
+      <h2>Preventive Diagnostics</h2>
+      <p>Programs that improve preventive screening and keep patients on track—without adding chaos to your providers and staff.</p>
+      <a class="btn" href="#preventive">Open</a>
+    </div>
+    <div class="bucket reveal">
+      <div class="label">Bucket 03</div>
+      <h2>Revenue Optimization</h2>
+      <p>Net revenue, clean claims, and ancillary program execution. Optimization that is tied to daily operations.</p>
+      <a class="btn" href="#revenue">Open</a>
+    </div>
+    <div class="bucket reveal">
+      <div class="label">Bucket 04</div>
+      <h2>AI + Decision Support</h2>
+      <p>When AI supports operations, not the other way around—embedded tools that help teams move faster without adding risk.</p>
+      <a class="btn" href="#ai">Open</a>
+    </div>
 
-    <section class="card hidden" aria-label="Clinical operations">
-      <div class="tag">Clinical Operations</div>
-      <h2>Workflow & capacity optimization</h2>
-      <p>Eliminate unnecessary steps, reduce scheduling friction, and simplify task handoffs so clinicians can focus on clinical care.</p>
+    <div class="section reveal" id="efficiency">
+      <h2>Operational Efficiency</h2>
+      <p><strong>Primary outcomes:</strong> throughput + staffing capacity. <strong>Secondary:</strong> profitability.</p>
       <ul>
-        <li>Workflow redesign and change management</li>
-        <li>Queue + intake optimization</li>
-        <li>Process controls for consistency</li>
+        <li>Workflow design and bottleneck removal</li>
+        <li>Staffing model stability (roles, load balancing, training loops)</li>
+        <li>Leadership cadence + “operating rhythm” implementation</li>
+        <li>Compliance + quality embedding into daily process</li>
       </ul>
-    </section>
+    </div>
 
-    <section class="card hidden" aria-label="Preventive diagnostics">
-      <div class="tag">Preventive Diagnostics</div>
-      <h2>Preventive programs that fit your practice</h2>
-      <p>Build prevention-first diagnostics and programs into your existing practice infrastructure—without overwhelming staff.</p>
+    <div class="section reveal" id="preventive">
+      <h2>Preventive Diagnostics</h2>
+      <p>Build preventive programs that run smoothly and consistently so compliance and patient adherence become the norm, not the exception.</p>
       <ul>
-        <li>Risk-based program design</li>
-        <li>Diagnostic pathways & clinical workflows</li>
-        <li>Program performance dashboards</li>
+        <li>Preventive program design and execution</li>
+        <li>Diagnostic lab workflows + provider/staff integration</li>
+        <li>Patient engagement loops that don’t overload the front desk</li>
       </ul>
-    </section>
+    </div>
 
-    <section class="card hidden" aria-label="Staffing">
-      <div class="tag">Staffing</div>
-      <h2>Staffing models that adapt in real-time</h2>
-      <p>Balance workload with demand, improve role clarity, and reduce burnout by aligning staffing to what actually happens daily.</p>
+    <div class="section reveal" id="revenue">
+      <h2>Revenue Optimization</h2>
+      <p>Revenue only matters if it is sustainable and clean. We prioritize revenue improvement actions that you can operationalize week over week.</p>
       <ul>
-        <li>Role definition & task realignment</li>
-        <li>Cross-training and capacity planning</li>
-        <li>Performance visibility for management</li>
+        <li>Billing / RCM workflow optimization</li>
+        <li>Ancillary services (operational + financial execution)</li>
+        <li>Risk reduction through process control</li>
       </ul>
-    </section>
+    </div>
 
-    <section class="card hidden" aria-label="Compliance">
-      <div class="tag">Compliance</div>
-      <h2>Compliance that enables operations</h2>
-      <p>Integrate compliance into workflows so it becomes an operational strength—not a slowdown.</p>
+    <div class="section reveal" id="ai">
+      <h2>AI + Decision Support</h2>
+      <p>AI is most valuable when it is tied to a measurable operational constraint—throughput, staffing, revenue cycle speed, and risk reduction.</p>
       <ul>
-        <li>Compliance-first workflow mapping</li>
-        <li>Policy → process traceability</li>
-        <li>Audit-ready documentation</li>
+        <li>Decision support tooling aligned to your operating model</li>
+        <li>Automation that reduces cycle time</li>
+        <li>Implementation safety controls</li>
       </ul>
-    </section>
+    </div>
 
-    <section class="card hidden" aria-label="Billing">
-      <div class="tag">Billing & RCM</div>
-      <h2>Revenue cycle foundations that protect cash flow</h2>
-      <p>We help build clean claims, faster documentation, and revenue protections into everyday clinic operations.</p>
-      <ul>
-        <li>Claims accuracy and submission readiness</li>
-        <li>Denials prevention patterns</li>
-        <li>Billing workflow modernization</li>
-      </ul>
-    </section>
-
-    <section class="card hidden" aria-label="Decision support">
-      <div class="tag">Decision Support</div>
-      <h2>Insights that drive better decisions</h2>
-      <p>We turn data into decision-ready outputs for practice leadership: capacity, throughput, program performance, and margin impact.</p>
-      <ul>
-        <li>Leadership dashboards</li>
-        <li>Program performance reporting</li>
-        <li>Operational KPI tracking</li>
-      </ul>
-    </section>
-
-    <article class="section-full hidden" aria-label="Call to action">
-      <h2 style="margin:0">How to work with us</h2>
-      <p class="lead">We run with your team from assessment to implementation. Once you approve, we can extend these services into additional pages and programs.</p>
-      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:2px;">
-        <a href="/contact/" style="display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;border-radius:10px;border:1px solid transparent;background:var(--accent);color:#fff;font-weight:800;">Request a discovery</a>
-        <a href="/insights/" style="display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;border-radius:10px;border:1px solid var(--border);font-weight:800;color:var(--text);">Explore insights</a>
+    <div class="cta reveal">
+      <div>
+        <h3>Want a quick operating bucket assessment?</h3>
+        <p style="margin:0;color:var(--muted);">We’ll map the constraint → plan the pilot → scale the operating rhythm.</p>
       </div>
-    </article>
+      <a class="btn btn-primary" href="/contact/">Start with the form</a>
+    </div>
+
+    <footer class="section reveal" style="grid-column:span 12;">
+      <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center;">
+        <div>&copy; 2026 Emperious Health — Staging</div>
+        <div style="display:flex;gap:12px;">
+          <a href="/">Home</a>
+          <a href="/services/">Services</a>
+          <a href="/insights/">Insights</a>
+          <a href="/about/">About</a>
+          <a href="/contact/">Contact</a>
+        </div>
+      </div>
+    </footer>
   </main>
 
-  <footer class="footer">
-    <div class="container" style="padding:0;justify-content:space-between;gap:16px;flex-wrap:wrap;">
-      <div style="font-weight:800;color:#111827;">Emperious Health — Staging</div>
-      <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
-        <a href="/privacy/" style="color:var(--muted);">Privacy</a>
-        <a href="/terms/" style="color:var(--muted);">Terms</a>
-        <a href="https://github.com/kp1818-del/emperious-staging" style="color:var(--muted);">Repo</a>
-      </div>
-    </div>
-  </footer>
-
   <script>
-    const reveal = () => {
-      const io = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if(entry.isIntersecting){
-            entry.target.classList.add('visible');
-            io.unobserve(entry.target);
-          }
-        });
-      },{threshold:.18});
-      document.querySelectorAll('.hidden').forEach(el=>io.observe(el));
-    };
-    window.addEventListener('load',reveal);
+    const obs = new IntersectionObserver(entries => {
+      for (const e of entries) {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          obs.unobserve(e.target);
+        }
+      }
+    }, {threshold: 0.18});
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
   </script>
 </body>
 </html>
